@@ -10,3 +10,5 @@ Starting project for a course on Advanced Node @ Udemy
 
 **Important:**
 The credentials for the Mongo Atlas DB in `dev.js` are read only. If you attempt to log in without first adding your own connection string (covered later in the course) you will see an error: `[0] MongoError: user is not allowed to do action [insert] on [advnode.users]`
+# AdvancedNodeStarter udemy course practice
+# AdvancedNodeStarter udemy course practice
