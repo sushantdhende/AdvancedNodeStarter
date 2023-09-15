@@ -3,12 +3,12 @@ const requireLogin = require('../middlewares/requireLogin');
 
 // const Blog = mongoose.model('Blog');
 const Blog = [
-  {_user: 1},
-  {_user: 2},
-  {_user: 3},
-  {_user: 4},
-  {_user: 5},
-  {_user: 6},
+  {_id: 1, title: 'title 1', content: 'sdfoish osihdiof hasiodfjoasidjf i[oajdf ioajdfioajs dfiojaiodf oaidjf oia djfoiaj dfoias d'},
+  {_id: 2, title: 'title 2', content: 'sdfoish osihdiof hasiodfjoasidjf i[oajdf ioajdfioajs dfiojaiodf oaidjf oia djfoiaj dfoias d'},
+  {_id: 3, title: 'title 3', content: 'sdfoish osihdiof hasiodfjoasidjf i[oajdf ioajdfioajs dfiojaiodf oaidjf oia djfoiaj dfoias d'},
+  {_id: 4, title: 'title 4', content: 'sdfoish osihdiof hasiodfjoasidjf i[oajdf ioajdfioajs dfiojaiodf oaidjf oia djfoiaj dfoias d'},
+  {_id: 5, title: 'title 5', content: 'sdfoish osihdiof hasiodfjoasidjf i[oajdf ioajdfioajs dfiojaiodf oaidjf oia djfoiaj dfoias d'},
+  {_id: 6, title: 'title 6', content: 'sdfoish osihdiof hasiodfjoasidjf i[oajdf ioajdfioajs dfiojaiodf oaidjf oia djfoiaj dfoias d'},
 ];
 
 module.exports = app => {
@@ -38,10 +38,12 @@ module.exports = app => {
     client.set(req.user.id, JSON.stringify(blogs));
   });
 
-  app.get('/api/blogs', requireLogin, async (req, res) => {
-    const blogs = await Blog.find({ _user: req.user.id });
+  app.get('/api/blogs', async (req, res) => {
+    console.log('req.user==>',req.user);
+    // const blogs = await Blog.find({ _user: req.user.id });
+    // const blogs = await Blog.find({ _user: req.user.id });
 
-    res.send(blogs);
+    res.send(Blog);
   });
 
   app.post('/api/blogs', requireLogin, async (req, res) => {
